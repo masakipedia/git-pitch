@@ -1,10 +1,3 @@
----
-title: "[Swift4] UIPageViewController with playground"
-date: "2018-04-05T15:19:00+09:00"
-tags: ["swift4", "xcode9", "UIPageViewController"]
-bannerURL: "https://user-images.githubusercontent.com/32217053/38424615-9b605de6-39ec-11e8-9a46-4cc8466af85d.gif"
----
-
 
 <h2>
     はじめに
@@ -15,6 +8,9 @@ bannerURL: "https://user-images.githubusercontent.com/32217053/38424615-9b605de6
 </p>
 
 <br>
+
+---
+
 
 <h2>
     コードはこちら
