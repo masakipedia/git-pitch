@@ -1,120 +1,102 @@
-# [GPGPU] Overview of GPGPU
 
-#### 奥野 真基 (Okuno Masaki)
+# 発声器官の構造 
 
----
+人間はどのように音声を生成するのか
 
-## Tips!
-
-<br>
-
-@fa[arrows gp-tip](Press F to go Fullscreen)
-
-@fa[microphone gp-tip](Press S for Speaker Notes)
+奥野真基
 
 ---
 
-## Template Features
+## 音声発生プロセス
 
-- Code Presenting |
-- Repo Source, Static Blocks, GIST |
-- Custom CSS Styling |
-- Slideshow Background Image |
-- Slide-specific Background Images |
-- Custom Logo, TOC, and Footnotes |
+1. 語句の選択
+2. 言語的形式に変換
+3. 発声器官で音声を生成
+4. 聴覚器官へ伝達
+5. 脳が理解
 
----?code=sample/go/server.go&lang=golang&title=Golang File
-
-@[1,3-6](Present code found within any repo source file.)
-@[8-18](Without ever leaving your slideshow.)
-@[19-28](Using GitPitch code-presenting with (optional) annotations.)
+話して自身にも伝わり、発声器官の制御を行なっている。
+（= speech chain; 言葉の鎖）
 
 ---
 
-@title[JavaScript Block]
+## 空気と発声の関係
 
-<p><span class="slide-title">JavaScript Block</span></p>
+### 空気の流れを生成
+1. 腹筋が横隔膜を押し上げる。
+2. 肺から空気が押し上げられる。
 
-```javascript
-// Include http module.
-var http = require("http");
+### 空気の通り道
+1. 気管
+2. 喉頭にある声門（声帯の間）
 
-// Create the server. Function passed as parameter
-// is called on every request made.
-http.createServer(function (request, response) {
-  // Attach listener on end event.  This event is
-  // called when client sent, awaiting response.
-  request.on("end", function () {
-    // Write headers to the response.
-    // HTTP 200 status, Content-Type text/plain.
-    response.writeHead(200, {
-      'Content-Type': 'text/plain'
-    });
-    // Send data and end response.
-    response.end('Hello HTTP!');
-  });
+### 空気の流れから発声へ
+1. 声を出そうとする時のみ、声帯同士が接近する。
+2. 声帯の間を通り抜ける際、空気流によって声門が開閉を繰り返す。
+3. 声門の開閉が空気の断続を生成する。
+4. 音源となる。（= glottal source; 声帯音源）
 
-// Listen on the 8080 port.
-}).listen(8080);
-```
+(声帯の振動 == 声門の開閉) -> true?
 
-@[1,2](You can present code inlined within your slide markdown too.)
-@[9-17](Displayed using code-syntax highlighting just like your IDE.)
-@[19-20](Again, all of this without ever leaving your slideshow.)
-
----?gist=onetapbeyond/494e0fecaf0d6a2aa2acadfb8eb9d6e8&lang=scala&title=Scala GIST
-
-@[23](You can even present code found within any GitHub GIST.)
-@[41-53](GIST source code is beautifully rendered on any slide.)
-@[57-62](And code-presenting works seamlessly for GIST too, both online and offline.)
+- 基本周期 = 声帯の振動周期
+- 声が高い == 基本周期が短い
 
 ---
 
-## Template Help
+## 声帯音源を変化させる
+- 声道
+    - 場所 : （声帯 < 声道 <= 鼻孔） || （声帯 < 声道 < 舌）
+    - 役割 : 声帯音源を変化させる
+        - 音源に音色を付ける
+        - 顎, 舌, 唇を動かす
 
-- [Code Presenting](https://github.com/gitpitch/gitpitch/wiki/Code-Presenting)
-  + [Repo Source](https://github.com/gitpitch/gitpitch/wiki/Code-Delimiter-Slides), [Static Blocks](https://github.com/gitpitch/gitpitch/wiki/Code-Slides), [GIST](https://github.com/gitpitch/gitpitch/wiki/GIST-Slides) 
-- [Custom CSS Styling](https://github.com/gitpitch/gitpitch/wiki/Slideshow-Custom-CSS)
-- [Slideshow Background Image](https://github.com/gitpitch/gitpitch/wiki/Background-Setting)
-- [Slide-specific Background Images](https://github.com/gitpitch/gitpitch/wiki/Image-Slides#background)
-- [Custom Logo](https://github.com/gitpitch/gitpitch/wiki/Logo-Setting) [TOC](https://github.com/gitpitch/gitpitch/wiki/Table-of-Contents) [Footnotes](https://github.com/gitpitch/gitpitch/wiki/Footnote-Setting)
-
----
-
-## Go GitPitch Pro!
-
-<br>
-<div class="left">
-    <i class="fa fa-user-secret fa-5x" aria-hidden="true"> </i><br>
-    <a href="https://gitpitch.com/pro-features" class="pro-link">
-    More details here.</a>
-</div>
-<div class="right">
-    <ul>
-        <li>Private Repos</li>
-        <li>Private URLs</li>
-        <li>Password-Protection</li>
-        <li>Image Opacity</li>
-        <li>SVG Image Support</li>
-    </ul>
-</div>
+    - 調音 = 声道を変化させ、目的の音声にする
+        - 調音器官 = 調音に用いる声道の部分 
+            - 調音器 = 自由に動かせる舌, 唇, 口蓋帆（こうがいはん）
 
 ---
 
-### Questions?
+## 母音の調音位置
 
-<br>
 
-@fa[twitter gp-contact](@gitpitch)
+---
 
-@fa[github gp-contact](gitpitch)
+## 子音の発声方法
 
-@fa[medium gp-contact](@gitpitch)
+- 調音様式 = 調音方法の種類
+- 子音
+    - 有声子音 = 声帯の振動をある子音
+    - 無声子音 = 声帯の振動がない子音
 
----?image=assets/image/gitpitch-audience.jpg&opacity=100
+### 摩擦, 破裂, 破擦
+- 摩擦音 = 舌で狭い道を作り、空気を通す。
+    - 音 : z
+- 破裂音 = 舌や口で空気流を一時的に止め、急に解放する。
+    - 音 : t
+- 破擦音 = 破裂音から摩擦音へ移行する。
+    - 音 : ts
 
-@title[Download this Template!]
+上記の発声は、声帯の振動と関係ない。
 
-### Get your presentation started!
-### [Download this template @fa[external-link gp-download]](https://gitpitch.com/template/download/black-binary)
+### 半母音, 鼻音
+- 半母音 = 母音と同じ生成方法だが、持続しない。
+    - 音 : w
+- 鼻音   = 軟口蓋を下げ、口の中で気流を遮断する。
+    - 音 : m
+
+### 撥音, 弾音
+- 撥音 = 前後の音素によって、鼻音化母音として現れる。
+    - 音 : 日本語の"ん"
+- 鼻音化母音 = 母音発生時に口蓋帆（こうがいはん）を下げる。
+
+## 声帯振動の有無
+- 有声音     = 声帯振動がある音
+- 無声音     = 声帯振動がない音
+- ささやき声 = 声帯振動をせず、声道を開いて調音する。
+
+---
+
+## 以上
+
+
 
